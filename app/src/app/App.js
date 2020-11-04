@@ -1,8 +1,7 @@
-import React from 'react';
-import { useSelector } from "react-redux"
-// import { Counter } from './features/counter/Counter';
-import { Search } from "./features/search/Search";
-import BookCard from "./components/BookCard";
+import React from "react";
+import { useSelector } from "react-redux";
+import { Search } from "../features/search/Search";
+import BookCard from "../components/BookCard";
 function App() {
 	const st = useSelector(state => state);
 	return (
