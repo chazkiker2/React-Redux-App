@@ -18,7 +18,7 @@ export const Search = props => {
 	const handleSubmit = (evt) => {
 		evt.preventDefault();
 		const termToSearch = input.searchTerm.trim().toLowerCase().split(" ").join("+");
-		dispatch(setSearchTerm(termToSearch));
+		// dispatch(setSearchTerm(termToSearch));
 		// dispatch(fetchSearchResults(termToSearch));
 		dispatch(fetchResultsAsync(termToSearch));
 		// clearForm(evt);
