@@ -10,7 +10,7 @@ const useForm = (initInput) => {
 	};
 
 	const clearForm = e => {
-		e.preventDefault();
+		// e.preventDefault();
 		setInput(initInput);
 	};
 

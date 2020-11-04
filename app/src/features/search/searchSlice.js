@@ -1,4 +1,5 @@
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
+import { getSearchResults } from "../../api/openlibAPI";
 import axios from "axios";
 
 export const fetchSearchResults = createAsyncThunk(
@@ -8,7 +9,7 @@ export const fetchSearchResults = createAsyncThunk(
 		return response.data;
 	}
 )
-export const fetchResultsAsync = createAsyncThunk(
+export const fetchResultsAsync1 = createAsyncThunk(
 	'search/fetchSearchResultsStatus',
 	async (term, { getState, requestId }) => {
 		const { currentRequestId, loading } = getState().search
@@ -19,31 +20,31 @@ export const fetchResultsAsync = createAsyncThunk(
 		return response.data;
 	}
 )
+export const fetchResultsAsync = createAsyncThunk(
+	'search/fetchSearchResultsStatus',
+	async (term, { getState, requestId }) => {
+		const { currentRequestId, loading } = getState().search
+		if (loading !== 'pending' || requestId !== currentRequestId) {
+			return
+		}
+		return getSearchResults(term);
+	}
+)
+
+const initialSearchState = {
+	searchTerm: "",
+	// searchResults: {},
+	entities: [],
+	loading: "idle",
+	currentRequestId: undefined,
+	error: null,
+}
 
 
 export const searchSlice = createSlice({
 	name: "search",
-	initialState: {
-		searchTerm: "",
-		// searchResults: {},
-		entities: [],
-		loading: "idle",
-		currentRequestId: undefined,
-		error: null,
-	},
-	reducers: {
-		// setSearchResults: (state, action) => {
-		// 	state.searchResults = action.payload;
-		// },
-		// setSearchTerm: (state, action) => {
-		// 	state.searchTerm = action.payload;
-		// }
-	},
-	// extraReducers: {
-	// 	[fetchSearchResults.fulfilled]: (state, action) => {
-	// 		state.searchResults = (action.payload);
-	// 	}
-	// }
+	initialSearchState,
+	reducers: {},
 	extraReducers: {
 		[fetchSearchResults.pending]: (state, action) => {
 			if (state.loading === 'idle') {

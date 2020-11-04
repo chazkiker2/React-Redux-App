@@ -9,6 +9,7 @@ function App() {
 		<div className="App">
 			<header className="App-header">
 				{/* <Counter /> */}
+				<Search />
 				<div>
 					{
 						(st.search.entities.length > 0) ?
@@ -16,11 +17,8 @@ function App() {
 								return <BookCard data={x} />
 							})
 							: <div />
-
 					}
-
 				</div>
-				<Search />
 			</header>
 		</div>
 	);
