@@ -12,6 +12,12 @@ export const fetchBySubject = async (subject) => {
 	return data;
 }
 
+export const fetchBySubjectWithDetails = async (subject) => {
+	const url = `http://openlibrary.org/subjects/${subject}.json?details=true`;
+	const { data } = await axios.get(url);
+	return data;
+}
+
 export const fetchByQueryWithDetails = async (params) => {
 	const formattedParams = params ? `&${params.join("&")}` : "";
 	const url = `https://openlibrary.org/query.json?type=/type/edition&languages=/languages/eng${formattedParams}&*=`;
