@@ -17,28 +17,7 @@ const CarouselSection = styled.div`
 		}
 		}
 	}
-	/* align-items: center; */
-	/* border: 1px solid black; */
 `
-
-const SCarousel = styled(Carousel)`
-	display: flex;
-	flex-flow: row nowrap;
-	justify-content: center;
-	/* border: 1px solid black; */
-	.carousel-slide {
-		display: flex;
-		flex-flow: row nowrap;
-		justify-content: space-evenly;
-	}
-	/* button {
-		display: inline-block;
-		background-color: black;
-		color: white;
-		border: 0;
-		border-radius: 5px;
-	} */
-`;
 
 const SCarouselItem = styled.div`
 	display: flex;
@@ -78,7 +57,7 @@ const initialCategories = [
 		"textbooks",]
 ]
 const Home = props => {
-	const [categories, setCategories] = useState(initialCategories);
+	const [categories] = useState(initialCategories);
 	return (
 		<div>
 			<section className="subject-banner">

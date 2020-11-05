@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import { useRouteMatch, useLocation } from "react-router-dom";
+import { useLocation } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
 
 import { fetchSubject, selectSubject, sortSubjectData } from "./subjectSlice";

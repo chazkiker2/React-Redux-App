@@ -7,7 +7,7 @@ const SData = styled.div`
 	display: flex;
 	flex-flow: row wrap;
 	justify-content: space-between;
-	align-items: flex-start;
+	align-items: stretch;
 	div.data-topic {
 		/* margin: 20px; */
 		display: flex;

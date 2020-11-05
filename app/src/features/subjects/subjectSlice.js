@@ -27,7 +27,7 @@ export const fetchSubject = createAsyncThunk(
 export const sortSubjectData = createAsyncThunk(
 	"subjects/sortSubjectDataStatus",
 	async (incomingEntity, { getState, requestId }) => {
-		const { currentSortId, sorting, subjectData } = getState().subject;
+		const { currentSortId, sorting } = getState().subject;
 		if (sorting !== "pending" || requestId !== currentSortId) {
 			return;
 		}

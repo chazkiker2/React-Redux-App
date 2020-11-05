@@ -14,4 +14,6 @@ export default configureStore({
 		subject: subjectReducer,
 	},
 	middleware: (getDefaultMiddleware) => getDefaultMiddleware().concat(thunk).concat(logger),
+	devTools: process.env.NODE_ENV !== 'production',
+	// enhancers: []
 });
