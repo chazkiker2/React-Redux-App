@@ -63,7 +63,7 @@ const SCarouselItem = styled.div`
 const initialCategories = [
 	["art",
 		"fantasy",
-		"biographies",
+		"biography",
 		"science",
 		"recipes",],
 	["romance",

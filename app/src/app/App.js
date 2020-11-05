@@ -9,6 +9,7 @@ import Search from "../features/search/Search";
 import Nav from "../features/nav/Nav";
 import BookCard from "../components/BookCard";
 import Home from "../features/home/Home";
+import DisplaySubject from "../features/subjects/DisplaySubject";
 
 
 function App() {
@@ -28,6 +29,9 @@ function App() {
 									: <div />
 							}
 						</div>
+					</Route>
+					<Route path="/subjects/:subjectName">
+						<DisplaySubject />
 					</Route>
 					<Route path="/subjects">
 						<div>SUBJECTS</div>

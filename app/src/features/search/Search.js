@@ -9,40 +9,6 @@ import { fetchResults } from "./searchSlice";
 
 import useForm from "../../hooks/useForm";
 
-// const Header = styled.header`
-// 	width: 100%;
-// 	background-color: black;
-// 	color: white;
-// 	height: 50px;
-// 	display: flex;
-// 	justify-content: center;
-// 	div {
-// 		width: 95%;
-// 		display: flex;
-// 		justify-content: space-between;
-// 		align-items: center;
-
-// 		h1 {
-// 			font-size: 2rem;
-// 			/* font-weight: 600; */
-// 		}
-// 		form {
-// 			input {
-// 				background-color: transparent;
-// 				border: 1px solid white;
-// 				border-radius: 4px;
-// 			}
-// 			button {
-// 				background-color: transparent;
-// 				color: white;
-// 				border: 1px solid white;
-// 				border-radius: 4px;
-// 				/* font-style:  */
-// 			}
-// 		}
-// 	}
-// `;
-
 const Form = styled.form`
 	input {
 		background-color: transparent;
