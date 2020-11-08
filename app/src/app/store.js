@@ -1,7 +1,7 @@
 // config helpers
 import { configureStore } from '@reduxjs/toolkit';
 import thunk from "redux-thunk";
-import logger from "redux-logger";
+// import logger from "redux-logger";
 
 // reducers
 import searchReducer from "../features/search/searchSlice";
@@ -13,7 +13,8 @@ export default configureStore({
 		search: searchReducer,
 		subject: subjectReducer,
 	},
-	middleware: (getDefaultMiddleware) => getDefaultMiddleware().concat(thunk).concat(logger),
+	middleware: (getDefaultMiddleware) => getDefaultMiddleware().concat(thunk),
+	// .concat(logger),
 	devTools: process.env.NODE_ENV !== 'production',
 	// enhancers: []
 });
